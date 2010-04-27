@@ -50,6 +50,17 @@ module HtmlNamespacing
         @formats ||= Set.new(@options[:template_formats] || ['html'])
       end
 
+      def self.skip_template?(path)
+        specifier = @options[:skip_templates]
+        if specifier.respond_to?(:call)
+          specifier.call(path)
+        elsif specifier.respond_to?(:include?)
+          specifier.include?(path)
+        else
+          specifier === path
+        end
+      end
+
       module Helpers
         #
         # Return the javascript for the rendered partials, wrapped in
@@ -163,6 +174,8 @@ module HtmlNamespacing
         ::ActionView::Template.class_eval do
           def render_with_html_namespacing(view, local_assigns = {})
             html = render_without_html_namespacing(view, local_assigns)
+
+            return html if HtmlNamespacing::Plugin::Rails.skip_template?(path)
 
             view.html_namespacing_rendered_paths << path_without_format_and_extension if view.respond_to?(:html_namespacing_rendered_paths)
 
