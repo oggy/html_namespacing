@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{html_namespacing}
-  s.version = "0.2.0"
+  s.version = "0.2.0.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["adamh"]
-  s.date = %q{2010-01-30}
+  s.authors = ["adamh", "oggy"]
+  s.date = %q{2010-04-26}
   s.description = %q{Inserts "class=" attributes within snippets of HTML so CSS and JavaScript can use automatic scopes}
   s.email = %q{adam@adamhooper.com}
   s.extensions = ["ext/html_namespacing/extconf.rb"]
@@ -30,7 +30,7 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/adamh/html_namespacing}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.5}
+  s.rubygems_version = %q{1.3.6}
   s.summary = %q{Automatic HTML namespacing}
   s.test_files = [
     "spec/c_extension_spec.rb",

@@ -9,7 +9,7 @@ begin
     gem.email = 'adam@adamhooper.com'
     gem.homepage = 'http://github.com/adamh/html_namespacing'
     gem.description = 'Inserts "class=" attributes within snippets of HTML so CSS and JavaScript can use automatic scopes'
-    gem.authors = ['adamh']
+    gem.authors = ['adamh', 'oggy']
     gem.files = FileList['lib/**/*.rb', 'rails/**/*.rb', 'ext/**/*.[ch]', 'lib/html_namespacing/plugin/dom_scan_*.js*'].to_a
     gem.extensions = ['ext/html_namespacing/extconf.rb']
     gem.add_dependency 'adamh-glob_fu', '>= 0.0.3'
